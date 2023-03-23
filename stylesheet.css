@@ -73,7 +73,9 @@ li {
   display: none;
 }
 
-
+ul {
+  list-style-type: none;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -94,6 +96,27 @@ li {
 .topnav a.active {
   background-color: var(--primary-color);
   color: var(--primary-typo-colors);
+}
+
+/* ----------------Back to top button--------------*/
+
+#myBtn .icone {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  bottom: 75px; 
+  right: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer; 
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+#myBtn {
+  display: none;
 }
 
 
@@ -140,7 +163,7 @@ h2,
   padding-bottom: 4rem;
 }
 
-/*Maps*/
+/*----------Maps------------*/
 
 #myMaps {
   height: 300px;
@@ -157,7 +180,7 @@ h2,
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 section article p {
@@ -182,7 +205,42 @@ section article p {
   border: solid 1px rgb(49, 46, 46);
 }
 
-/*Resources*/
+#imgBrew1 {
+  background-image: url(images/hop\ \(1\).jpg);
+}
+
+#imgBrew2 {
+  background-image: url(images/hop\ \(2\).jpg);
+}
+
+#imgBrew3 {
+  background-image: url(images/hop\ \(3\).jpg);
+}
+
+#imgBrew4 {
+  background-image: url(images/hop\ \(4\).jpg);
+}
+
+#imgBrew5 {
+  background-image: url(images/hop\ \(5\).jpg);
+}
+
+#imgBrew6 {
+  background-image: url(images/hop\ \(6\).jpg);
+}
+
+.imgBrewery {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+
+
+/*------------Resources-----------*/
 
 .titleResources {
   display: flex;
@@ -206,7 +264,71 @@ section p {
   margin: 1em;
 }
 
+/*resources form*/ 
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: var(--nav-background-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+#buttonForm {
+  width: 100px;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 /* ---------beer section---------- */
+/* beer img */
+
 .bieresImages {
   width: 70%;
   display: block;
@@ -376,6 +498,11 @@ footer>h4 {
 /*-----------MEDIA QUERIES-------------*/
 
 @media screen and (max-width: 768px) {
+
+  .topnav .toHide {
+    display: none;
+  }
+
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -419,46 +546,56 @@ footer>h4 {
 }
 
 @media screen and (min-width: 768px) {
-  .breweriesBio {
+.breweriesBio {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  section.breweriesBio h2 {
+section.breweriesBio h2 {
     grid-column: 1 / 5;
   }
 
-  .breweriesBio article:first-of-type {
+.breweriesBio article:first-of-type {
     grid-row: 2 / 4;
   }
 
-  #homemaps {
+#homemaps {
     display: none;
   }
 
-  .desktopMedia {
+.desktopMedia {
     display: flex;
     flex-direction: row;
   }
 
-  .desktopMedia p {
+.desktopMedia p {
     width: 40em;
   }
 
-  .desktopMedia .maps {
+.desktopMedia .maps {
     width: 600px;
     height: 200px;
   }
 
-  .maps {
+.maps {
     height: 200px;
     margin: 1em 4em 1em 1em;
     border-radius: 15px;
     border: solid 1px rgb(49, 46, 46);
   }
 
+#videosMedia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+}
 
-  #videosMedia {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+.col-25, .col-75, input[type=submit] {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+}
 }
