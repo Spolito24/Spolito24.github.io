@@ -40,6 +40,10 @@ p {
 }
 
 /* ---------NAV SECTIOn---------- */
+li {
+  list-style-type: none;
+}
+
 .topnav {
   background-color: var(--nav-background-color);
   overflow: hidden;
